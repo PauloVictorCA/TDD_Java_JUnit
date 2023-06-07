@@ -16,10 +16,11 @@ class ReajusteServiceTest {
 	//Ajuste salario de 15% que o desempenho for a bom.
 	//Ajuste salario de 20% que o desempenho for a otimo.
 	
+	ReajusteService service = new ReajusteService();
+	Funcionario funcionario = new Funcionario("Paulo", LocalDate.now(), new BigDecimal("1000"));
+	
 	@Test
 	public void reajusteDeTresPorcentoQuandoForADesejar() {
-		ReajusteService service = new ReajusteService();
-		Funcionario funcionario = new Funcionario("Paulo", LocalDate.now(), new BigDecimal("1000"));
 		
 		service.concederReajuste(funcionario, DesempenhoEnum.A_DESEJAR);
 		
@@ -28,8 +29,6 @@ class ReajusteServiceTest {
 	
 	@Test
 	public void reajusteDeQuinzePorcentoQuandoForBom() {
-		ReajusteService service = new ReajusteService();
-		Funcionario funcionario = new Funcionario("Paulo", LocalDate.now(), new BigDecimal("1000"));
 		
 		service.concederReajuste(funcionario, DesempenhoEnum.BOM);
 		
@@ -38,8 +37,6 @@ class ReajusteServiceTest {
 	
 	@Test
 	public void reajusteDeVintePorcentoQuandoForOtimo() {
-		ReajusteService service = new ReajusteService();
-		Funcionario funcionario = new Funcionario("Paulo", LocalDate.now(), new BigDecimal("1000"));
 		
 		service.concederReajuste(funcionario, DesempenhoEnum.OTIMO);
 		
